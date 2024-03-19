@@ -87,7 +87,7 @@ def update_inbounds_for_protocol(username, protocol):
             if inbounds_to_add:
                 user_details['inbounds'][protocol] += inbounds_to_add
 
-            if user_details['status'] != "disabled":
+            if user_details['status'] not in ["disabled", "on_hold"]:
                 user_details['status'] = "active"
 
             # Create a list of keys to remove
